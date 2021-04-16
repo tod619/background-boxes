@@ -44,3 +44,54 @@ body {
   box-shadow: none;
   transform: translateY(2px);
 }
+
+.boxes {
+  height: 500px;
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  transition: 0.4s ease;
+  position: relative;
+}
+
+.boxes.big {
+  width: 600px;
+  height: 600px;
+}
+
+.boxes.big .box {
+  transform: rotateZ(360deg);
+}
+
+.box {
+  background-image: url("https://media.giphy.com/media/EZqwsBSPlvSda/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: 500px 500px;
+  height: 125px;
+  width: 125px;
+  transition: 0.4s ease;
+  position: relative;
+}
+
+.box::after {
+  content: "";
+  background-color: #f6e58d;
+  height: 100%;
+  width: 15px;
+  position: absolute;
+  top: 8px;
+  right: -15px;
+  transform: skewY(45deg);
+}
+
+.box::before {
+  content: "";
+  background-color: #f9ca24;
+  height: 15px;
+  width: 100%;
+  position: absolute;
+  bottom: -15px;
+  left: 8px;
+  transform: skewX(45deg);
+}
